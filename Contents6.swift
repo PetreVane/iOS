@@ -58,20 +58,34 @@ passwordCheck(lenght: passLenght)
     if something.count <= 5 {
         print ("Something doesn't happen all the time")
     } 
+   
+
+   // Adding some repeat - while loops
+
+   var number: Int  = 2
+
+   repeat {
+       
+       number += 2
+       print (number)
+
+
+   } while number < 10
     
-    func testin(count :Int) {
+    var secondNumber :Int = 10
+    
+    while secondNumber < 15 {
         
+        secondNumber += 1
+        print (secondNumber)
     }
-    class Name {
     
+    var thirdNumber :Int = 3
+    
+    do {
+        thirdNumber += 1
+        print (thirdNumber)
         
-    }
-    
-    
-    
-    
-    
-    
-    
+    } while (thirdNumber < 10)
 
 
