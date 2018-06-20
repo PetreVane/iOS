@@ -8,16 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
     
     var favoriteMovies: [Movie] = []
     @IBOutlet var mainTableView: UITableView!
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favoriteMovies.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
     override func viewWillAppear(_ animated: Bool) {
         mainTableView.reloadData()
         if favoriteMovies.count == 0 {
             favoriteMovies.append(Movie(id: "tt0372784", title: "Batman Begins", year: "2005", imageUrl: "https://mykombini-ab5a.kxcdn.com/52842-large/mafex-no59-mafex-scarecrow-batman-begins-medicom-toy.jpg"))
         }
+
     super.viewWillAppear(animated)
     }
     
