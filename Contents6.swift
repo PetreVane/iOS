@@ -45,5 +45,28 @@ func passwordCheck (lenght: Int) {
 }
 
 passwordCheck(lenght: passLenght)
+    
+    var something :String
+    
+    something = " This could be something"
+    var counting = something.count
+    print(counting)
+    
+    if something.count >= 10 {
+        print ("Something is happening")
+    }
+    if something.count <= 5 {
+        print ("Something doesn't happen all the time")
+    } 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
