@@ -59,8 +59,13 @@ passwordCheck(lenght: passLenght)
         print ("Something doesn't happen all the time")
     } 
     
+    func testin(count :Int) {
+        
+    }
+    class Name {
     
-    
+        
+    }
     
     
     
