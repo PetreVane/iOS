@@ -57,11 +57,22 @@ case .scifi:
 print (myBook.rawValue)
 
 
-var testing: String?
+var testing: String
 
 testing = "haha"
-type(of testing)
 
+
+
+enum MediaCollection {
+
+    case movie (String)
+    case music (Int)
+    case game (String)
+    case documentary (String)
+
+}
+
+var firstItem: MediaCollection = .documentary("National Geographic")
 
 
 

@@ -167,7 +167,7 @@ if someName != nil {
     _ = someName!
 }
 type(of: someName)
-print (someName )
+print (someName)
 // Declaring Enumerations
 
 enum MediaType {
