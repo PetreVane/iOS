@@ -105,6 +105,7 @@ func checkAge (_ age: Int) -> Bool {
     }
     
 }
+checkAge(23)
 var myAge = checkAge(16)
 
 if myAge {
@@ -118,7 +119,7 @@ if myAge {
 // Personalising argument's labels
 
 
-func calculateDifference (from firsArgument: Int, to secondArgument: Int) -> Int {
+func difference (between firsArgument: Int, and secondArgument: Int) -> Int {
     
     if firsArgument > secondArgument {
         let difference = firsArgument - secondArgument
@@ -132,14 +133,23 @@ func calculateDifference (from firsArgument: Int, to secondArgument: Int) -> Int
     
 }
 
-print ("The difference is : \(calculateDifference(from: 145, to: 39))")
+print ("Result: \(difference(between: 460, and: 32))")
 
 
+// Naming Functions
 
+var list: Array = ["Sofia", "Caracas", "Paris", "London"]
 
+print (list[0])
+var empty = list.isEmpty
+print (empty)
 
-
-
+if list.isEmpty {
+    print ( "true" )
+    
+} else {
+    print ("false")
+}
 
 
 
