@@ -136,7 +136,7 @@ func difference (between firsArgument: Int, and secondArgument: Int) -> Int {
 print ("Result: \(difference(between: 460, and: 32))")
 
 
-// Playing with Arrays and Optionals 
+// Playing with Arrays and Optionals
 
 var list: Array = ["Sofia", "Caracas", "Paris", "London"]
 
@@ -157,14 +157,82 @@ someName = "Peter"
 
 type (of: someName)
 
-if let unwrapped = someName {
-    print ("optional unwrapped method 1")
+if someName != nil {
+    //print ("optional unwrapped method 1")
 } else {
     print ("this is a nil")
 }
 
 if someName != nil {
-    var unwrapped = someName!
-    print ("optional unwrapped method 2")
+    _ = someName!
 }
+type(of: someName)
+print (someName)
+// Declaring Enumerations
+
+enum MediaType {
+    // the type Name, should be written with Upper Cammel case
+    // here you list the options you want
+    // you can use your own word here, whatever is meaningful for you
+    
+    case book
+    case movie
+    case music
+    case game
+    
+    // this is an enumeration case
+    // the option within the type, should be written with lower cammel case
+    // you can write as many as cases as you want
+    
+}
+
+var itemType: MediaType
+//itemType = MediaType.book
+
+// Because you have declared a new data type, when you initialise a variable of type:MediaType, you won't have to write all the time the entire name of the data type. You can just use a .book, or .music
+
+itemType = .game
+itemType = .music
+//itemType = .book
+
+switch itemType {
+    
+case .movie:
+    print ("I have watched the \(itemType)")
+case .book:
+    print ("I have read the \(itemType)")
+case .game:
+    print ("I have played \(itemType)")
+case .music:
+    print ("I have listened \(itemType)")
+//default:
+//    print ("I don't know what \(itemType) is!")
+    // if you're being exhaustive, you don't need the 'default' case anymore!!!
+    // being exhaustive means, using all the available options for the new data type
+}
+
+
+var mySong: MediaType = .music
+//print (mySong)
+
+
+// Another example of enums
+
+enum BottleSize: String { // String, Int, Double
+    
+    case half = "37.5 cl"
+    case standard  = "75 cl"
+    case magnum = "1 L"
+    case huge = "1.5 L"
+    
+}
+
+var Beer: BottleSize = .huge
+
+print ("Your \(Beer) is \(Beer.rawValue)")
+print ("Your beer is \(Beer.rawValue)")
+
+
+
+
 
