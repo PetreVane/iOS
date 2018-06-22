@@ -167,7 +167,7 @@ if someName != nil {
     _ = someName!
 }
 type(of: someName)
-print (someName)
+print (someName )
 // Declaring Enumerations
 
 enum MediaType {
@@ -233,6 +233,4 @@ print ("Your \(Beer) is \(Beer.rawValue)")
 print ("Your beer is \(Beer.rawValue)")
 
 
-
-	
 
