@@ -136,7 +136,7 @@ func difference (between firsArgument: Int, and secondArgument: Int) -> Int {
 print ("Result: \(difference(between: 460, and: 32))")
 
 
-// Naming Functions
+// Playing with Arrays and Optionals 
 
 var list: Array = ["Sofia", "Caracas", "Paris", "London"]
 
@@ -151,6 +151,20 @@ if list.isEmpty {
     print ("false")
 }
 
+var someName: String?
+someName = "Peter"
+//someName = nil
 
+type (of: someName)
 
+if let unwrapped = someName {
+    print ("optional unwrapped method 1")
+} else {
+    print ("this is a nil")
+}
+
+if someName != nil {
+    var unwrapped = someName!
+    print ("optional unwrapped method 2")
+}
 
