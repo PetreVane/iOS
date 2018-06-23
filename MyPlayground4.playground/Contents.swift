@@ -3,4 +3,4 @@
 import Cocoa
 
 
-var str = "Hello, playground"
+//var str = "Hello, playground"
