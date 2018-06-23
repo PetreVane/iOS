@@ -89,11 +89,17 @@ struct Movie {
     var releaseYear: Int
     var director: String
     var genre: String
+    
+    func summar() -> String {
+        return "\(name) is a \(genre) movie, directed by \(director) that was released in \(releaseYear)."
+    }
 }
 
 
-
-
+var firstMovie = Movie(name: "Interstellar", releaseYear: 2014, director: "Christopher Nolan", genre: "Science Fiction")
+var secondMovie = Movie(name: "Arrival", releaseYear: 2016, director: "Denis Villenveuve", genre: "Science Fiction")
+print (firstMovie.summar())
+print (secondMovie.summar())
 
 
 
