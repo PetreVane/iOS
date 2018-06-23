@@ -8,30 +8,33 @@ import Darwin
 // Adding Associative values to Enumerations
 
 enum MediaType {
+    
     case movie (String)
     case music (String)
     case book (String)
 }
 
+var firstItem: MediaType = .music("Foo Fighters")
+var secondItem :MediaType = .book("Mircea Cartarescu")
+var thirdItem: MediaType = .movie("Martin Scorsese")
 
-var firtstItem:MediaType = .music("Rammstein")
-var harryPotter:MediaType = .book("Ioana")
 
-switch harryPotter {
-case .movie(let genre):
-    print ("it is a \(genre) movie")
+switch thirdItem {
+case .movie(let author):
+    print ("It's a \(author) movie")
 case .music(let artist):
     print ("This song is played by \(artist)")
-case .book(let author):
-    print ("This book was written by \(author)")
+case .book (let writter):
+    print ("The book was written by \(writter)")
 }
 
 
-print ("\(firtstItem) is something")
+//print ("\(firtstSong) is something")
 
-// Adding raw values 
+// Adding raw values
 
-enum Page:String {
+enum Page: String{
+    
     case word = "Here's the first word"
     case letter = "Here's the first letter"
     case sentence = "Here's the first sentence"
@@ -42,6 +45,7 @@ enum Page:String {
 var letter:Page = .sentence
 
 switch letter {
+    
 case .word:
     print ("\(letter.rawValue) coming out of my mouth!")
 case .letter:
@@ -54,6 +58,39 @@ case .paragraph:
 
 
 //print ("letter")
+
+
+// Adding structures and classes
+
+
+struct Resolution {  // declaring a new structure
+    
+    var width = 0    // adding some properties
+    var height = 0
+    
+}
+
+var tv = Resolution() // declaring a new variable and assigning the struct to var
+print (tv.height)     // will print the value stored within the struct property
+
+
+class VideMode {
+    
+    var resolution = Resolution()
+    var interlace = false
+    var frameRate = 0.0
+    var name:String?
+    
+}
+
+struct Movie {
+    
+    var name: String
+    var releaseYear: Int
+    var director: String
+    var genre: String
+}
+
 
 
 
