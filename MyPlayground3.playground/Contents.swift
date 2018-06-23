@@ -2,7 +2,7 @@
 
 import Cocoa
 import Darwin
-// var str = "Hello, playground"
+var str: String // this is type addnotation
 
 
 // Adding Associative values to Enumerations
@@ -82,6 +82,8 @@ class VideMode {
     var name:String?
     
 }
+print ("The resolution is \(Resolution.init(width: 800, height: 600)).")
+print ("Here comes the class; \(VideMode.init().resolution)")
 
 struct Movie {
     
@@ -90,7 +92,7 @@ struct Movie {
     var director: String
     var genre: String
     
-    func summar() -> String {
+    func summary() -> String {
         return "\(name) is a \(genre) movie, directed by \(director) that was released in \(releaseYear)."
     }
 }
@@ -98,10 +100,11 @@ struct Movie {
 
 var firstMovie = Movie(name: "Interstellar", releaseYear: 2014, director: "Christopher Nolan", genre: "Science Fiction")
 var secondMovie = Movie(name: "Arrival", releaseYear: 2016, director: "Denis Villenveuve", genre: "Science Fiction")
-print (firstMovie.summar())
-print (secondMovie.summar())
+print (firstMovie.summary())
+print (secondMovie.summary())
 
-
+let arrival = secondMovie.director
+print (arrival)
 
 
 
