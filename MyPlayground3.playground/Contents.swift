@@ -27,11 +27,39 @@ case .book(let author):
 }
 
 
+print ("\(firtstItem) is something")
+
+// Adding raw values 
+
+enum Page:String {
+    case word = "Here's the first word"
+    case letter = "Here's the first letter"
+    case sentence = "Here's the first sentence"
+    case paragraph = "Here's the first paragraph"
+}
+
+
+var letter:Page = .sentence
+
+switch letter {
+case .word:
+    print ("\(letter.rawValue) coming out of my mouth!")
+case .letter:
+    print ("\(letter.rawValue) I have ever written")
+case .sentence:
+    print ("\(letter.rawValue) that was correctly spelled")
+case .paragraph:
+    print ("\(letter.rawValue) the book has contained")
+}
+
+
+//print ("letter")
 
 
 
 
-//print ("\(firtstItem) is something")
+
+
 
 
 
