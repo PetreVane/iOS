@@ -23,13 +23,13 @@ if someStrings.isEmpty {
 } else {
    print ("Array not empty")
 }
-for each in 1...9 {
-    someStrings.append("randomElement")
-    for each in someStrings {
-        someStrings.append(each)
-    }
-    print (someStrings)
-}
+//for each in 1...9 {
+//    someStrings.append("randomElement")
+//    for each in someStrings {
+//        someStrings.append(each)
+//    }
+//    print (someStrings)
+//}
 
 print (someStrings.endIndex)
 
@@ -47,12 +47,26 @@ print (something)
 var threeDoubles = Array(repeating: 10, count: 3) // creating an array with default value
 
 
+// Refreshing Optionals
+
+var name: String?
+//name = "Peter"
+var name2:String
+
+if name != nil {
+    let name2 = name!
+    type(of: name2)
+    print ("Opt unwrapped")
+} else {
+    print ("name is an nil")
+}
 
 
-
-
-
-
+if let name3 = name {
+    print ("this is working")
+} else {
+    print ("this is not working")
+}
 
 
 
