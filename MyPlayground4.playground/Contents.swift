@@ -80,11 +80,11 @@ let name4 = array2.remove(at: 29)
 
 var number:Int = array2.count
 //print(number)
-var numberMinusOne = number - 1
+var numberMinusOne = number - 3
 //print(numberMinusOne)
 
 for each in 1 ... numberMinusOne {
-    array2.removeLast()
+    array2.removeFirst()
     print (array2)
 }
 
