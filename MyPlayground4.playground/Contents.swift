@@ -105,12 +105,6 @@ for each in 1 ... numberMinusOne {
 //}
 //
 
-
-
-
-
-
-
 print(name4)
 //print(array2[29])
 
@@ -119,9 +113,6 @@ print(name4)
 //    print("Item \(element) is at index \(index)!")
 //
 //}
-
-
-
 
 // Refreshing Optionals
 
