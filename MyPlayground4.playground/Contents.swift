@@ -135,9 +135,11 @@ print(name4)
 //    print ("this is not working")
 //}
 
+var newVariable = array2
+print (newVariable)
 
-
-
-
-
+//
+//let name = newVariable.append("Ioana")
+//if name
+//
 
