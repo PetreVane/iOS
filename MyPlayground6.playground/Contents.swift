@@ -48,8 +48,14 @@ func randomAlbum2 () -> (String, Int) {    // grouping the return values into a 
 let result2 = randomAlbum2()
 print (result2)
 
+// prints: ("Threatening aliens with Coca-Cola", 5000)
 
+// But when you call the function, you can actually call individual values of the tuple.
+// This is called: decomposing the tuple.
+// Think of the tuple as a very simple array, where the first element is indexed 0.
 
+print(result2.0) // prints: "Threatening aliens with Coca-Cola" only, because the return of type: String is indexed "0" in the function declaration.
+print(result2.1) // will return only the integer value of the entire return statement.
 
 
 
