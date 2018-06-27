@@ -80,14 +80,23 @@ print(result3.duration)
 
 // Instead of declaring a name for the tuple itself, you can decompose and use the values of the tuple, as you go
 
-let (name, timeToPlay) = randomAlbum3() // the names, are my choice and have nothing to do with the function..these are just some names that popped up in my mind
+let (name, timeToPlay) = randomAlbum3() // the names, are my choice and have nothing to do with the function.
 
 print ("Next album is '\(name)' with duration of: \(timeToPlay / 60) minutes.")
 
 
+// Another use for tuple is when you're looping over a dictionary
 
+var airline = ["SWA":"South West Airline",
+               "TAR":"Tarom",
+               "BAW": "British AirWays",
+               "SAS":"Scandinavian Air Services"]
 
-
+for (key, value) in airline {
+    print("\(key) is the shorhand of \(value)")
+    
+// what you're getting out of the loop, is a tuple -> a collection of (different) data types, containing both the key and the value of the dictionary!
+}
 
 
 
