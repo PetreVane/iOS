@@ -26,7 +26,7 @@ var basicTuple = (apperture, camera, shutterSpeed)  // this is a tuple
 func randomAlbum () -> String {
     
     let title = "Threatening aliens with Coca-Cola"
-    let duration = 5000
+    _ = 5000
     
     return title
 }
