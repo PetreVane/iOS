@@ -57,6 +57,42 @@ print (result2)
 print(result2.0) // prints: "Threatening aliens with Coca-Cola" only, because the return of type: String is indexed "0" in the function declaration.
 print(result2.1) // will return only the integer value of the entire return statement.
 
+// A friendlier way of decomposing a tuple, is to add a name label, when declaring a function.
+// We dont usually add return-labels for a function, but in the case of a tuple, it could be useful
+
+
+func randomAlbum3 () -> (albumTitle: String, duration: Int) {  // add return-labels for each return type
+    
+    let title = "Threatening aliens with Coca-Cola"
+    let duration = 5000
+    
+    return (title, duration)      // the return-labels have nothing to do with what you've been using inside the function
+}
+
+
+// You'll use the return-labels, when you want to decopompose a tuple, for easier access to a particular value
+
+var result3 = randomAlbum3()
+print(result3.albumTitle)  // making use of return-lables, to decompose a tuple
+print(result3.duration)
+
+// You can even use the tuple syntax to decompose and use de values, as you're calling the function
+
+// Instead of declaring a name for the tuple itself, you can decompose and use the values of the tuple, as you go
+
+let (name, timeToPlay) = randomAlbum3() // the names, are my choice and have nothing to do with the function..these are just some names that popped up in my mind
+
+print ("Next album is '\(name)' with duration of: \(timeToPlay / 60) minutes.")
+
+
+
+
+
+
+
+
+
+
 
 
 
