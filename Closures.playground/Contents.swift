@@ -34,17 +34,17 @@ let allBooks = [book1, book2, book3, book4, book5]
 
 // Here, the function accepts two parameters, of type Book (we have a new type, thanks to our initial structure) and returns a Bool
 
-//func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
-//
-//    if firstBook.readingAge <= secondBook.readingAge {
-//        //print ("First book reading age is smaller or equal than second book reading age")
-//        return true
-//    } else {
-//        //print ("Second book reading age is smaller than first book reading age.")
-//        return false
-//    }
-//
-//}
+func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
+
+    if firstBook.readingAge <= secondBook.readingAge {
+        //print ("First book reading age is smaller or equal than second book reading age")
+        return true
+    } else {
+        //print ("Second book reading age is smaller than first book reading age.")
+        return false
+    }
+
+}
 
 /*
 compareBooks(firstBook: book5, secondBook: book3) // this is one way of sorting books
