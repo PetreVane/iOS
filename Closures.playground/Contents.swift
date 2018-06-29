@@ -34,17 +34,17 @@ let allBooks = [book1, book2, book3, book4, book5]
 
 // Here, the function accepts two parameters, of type Book (we have a new type, thanks to our initial structure) and returns a Bool
 
-func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
-    
-    if firstBook.readingAge <= secondBook.readingAge {
-        //print ("First book reading age is smaller or equal than second book reading age")
-        return true
-    } else {
-        //print ("Second book reading age is smaller than first book reading age.")
-        return false
-    }
-    
-}
+//func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
+//
+//    if firstBook.readingAge <= secondBook.readingAge {
+//        //print ("First book reading age is smaller or equal than second book reading age")
+//        return true
+//    } else {
+//        //print ("Second book reading age is smaller than first book reading age.")
+//        return false
+//    }
+//
+//}
 
 /*
 compareBooks(firstBook: book5, secondBook: book3) // this is one way of sorting books
@@ -60,17 +60,17 @@ sortedBooks
  First, I am going to copy the function bellow, and comment out the call of the function above
 */
 
-func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
-    
-    if firstBook.readingAge <= secondBook.readingAge {
-        //print ("First book reading age is smaller or equal than second book reading age")
-        return true
-    } else {
-        //print ("Second book reading age is smaller than first book reading age.")
-        return false
-    }
-    
-}
+//func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
+//
+//    if firstBook.readingAge <= secondBook.readingAge {
+//        //print ("First book reading age is smaller or equal than second book reading age")
+//        return true
+//    } else {
+//        //print ("Second book reading age is smaller than first book reading age.")
+//        return false
+//    }
+//
+//}
 
 /*
  
@@ -80,37 +80,91 @@ func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
 
 */
 
-{ (firstBook: Book, secondBook: Book) -> Bool
-    in
-    if firstBook.readingAge <= secondBook.readingAge {
-        //print ("First book reading age is smaller or equal than second book reading age")
-        return true
-    } else {
-        //print ("Second book reading age is smaller than first book reading age.")
-        return false
-    }
-    
-}
+//{ (firstBook: Book, secondBook: Book) -> Bool
+//    in
+//    if firstBook.readingAge <= secondBook.readingAge {
+//        //print ("First book reading age is smaller or equal than second book reading age")
+//        return true
+//    } else {
+//        //print ("Second book reading age is smaller than first book reading age.")
+//        return false
+//    }
+//
+//}
 
 /* Now, swift is complaining that, the Closure is unused. Written like this, the closure isn't doing anything
 
 The point of writing a closure, is that you want to pass it.
  So what you need to do is, to cut the entire code between the { } and paste it into the field, where you were calling the initial sorting function:
+ */
+
+let sortedBooks = allBooks.sorted(by: { (firstBook: Book, secondBook: Book) -> Bool
+    in
+    if firstBook.readingAge <= secondBook.readingAge {
+        return true
+    } else {
+        return false
+    }
+    
+})
+sortedBooks
+
+//  This closure is now the argument, into the sorted(by ..) method!
+
+// But this is way to verbose...way too much code going on here!
+
+
+/*
  
- let sortedBooks = allBooks.sorted(by: { (firstBook: Book, secondBook: Book) -> Bool
- in
- if firstBook.readingAge <= secondBook.readingAge {
- return true
- } else {
- return false
- }
- 
- })
- 
- This closure is now the argument, into the sorted(by ..) method!
+ Because this closer is written in a context where, it must have certain parameters and a certain return type, you can just delete this line:
+ (firstBook: Book, secondBook: Book) -> Bool , including the "in" keyword.
  
  
+ Next, since you're using a piece of code that takes by default ceratin parameters, Swift has already given a name for those parameters...that mean the "firstBook" and "secondBook" are redundand.
+ 
+ So you can just replace the names with $0 and $1
+ 
+ */
+
+//let sortedBooks = allBooks.sorted(by: { $0.readingAge <= $1.readingAge {
+//        return true
+//    } else {
+//        return false
+//    }
+//})
+
+/*
+ 
+ Because this sorting method takes as an argument of type :book, all the properties of the structure are included.
+ 
+ Now, when a closure is the final or the only argument to a method call, (and this closure is the only argument to this method call) you can take the closure expression and place it outside of the following closed paranthesis, like you see in the case bellow:
+ 
+ */
+
+//let sortedBooks = allBooks.sorted(by: ) { $0.readingAge <= $1.readingAge {
+// return true
+// } else {
+// return false
+// }
+// }
+
+/*
+ 
+ This is called: trailing closure, and is basically a closure that it has been written outside of the { } for ease of readability.
  
  
-*/
+ Now if this trailing closure is the only argument to this method call, then these paranthesis are kind of redundand as well:
+ 
+ allBooks.sorted{ $0.readingAge <= $1.readingAge { ... }}
+ 
+ Now, since we are comparing 2 arguments, the entire "if / else" clock of code is redundand because the comparison itself will return true or false, if one argument is smaller than the other.
+ 
+ So the entire if / else statement, can be deleted. And because the closure is down to a single line...includind the "return" keyword can be deleted, because the closure returns something, without me needing to type the keyword "return".
+ 
+ */
+
+let sortedBooks2 = allBooks.sorted { $0.readingAge <= $1.readingAge } // here's the final version of the closure
+
+let sortedBooks3 = allBooks.sorted { $0.pageCount <= $1.pageCount }
+let sortedBooks4 = allBooks.sorted { $0.authorLastName < $1.authorLastName }
 
