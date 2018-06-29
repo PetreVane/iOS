@@ -60,17 +60,17 @@ sortedBooks
  First, I am going to copy the function bellow, and comment out the call of the function above
 */
 
-//func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
-//
-//    if firstBook.readingAge <= secondBook.readingAge {
-//        //print ("First book reading age is smaller or equal than second book reading age")
-//        return true
-//    } else {
-//        //print ("Second book reading age is smaller than first book reading age.")
-//        return false
-//    }
-//
-//}
+func compareBooks (firstBook: Book, secondBook: Book) -> Bool {
+
+    if firstBook.readingAge <= secondBook.readingAge {
+        //print ("First book reading age is smaller or equal than second book reading age")
+        return true
+    } else {
+        //print ("Second book reading age is smaller than first book reading age.")
+        return false
+    }
+
+}
 
 /*
  
@@ -80,17 +80,17 @@ sortedBooks
 
 */
 
-//{ (firstBook: Book, secondBook: Book) -> Bool
-//    in
-//    if firstBook.readingAge <= secondBook.readingAge {
-//        //print ("First book reading age is smaller or equal than second book reading age")
-//        return true
-//    } else {
-//        //print ("Second book reading age is smaller than first book reading age.")
-//        return false
-//    }
-//
-//}
+{ (firstBook: Book, secondBook: Book) -> Bool
+    in
+    if firstBook.readingAge <= secondBook.readingAge {
+        //print ("First book reading age is smaller or equal than second book reading age")
+        return true
+    } else {
+        //print ("Second book reading age is smaller than first book reading age.")
+        return false
+    }
+
+}
 
 /* Now, swift is complaining that, the Closure is unused. Written like this, the closure isn't doing anything
 
@@ -126,12 +126,12 @@ sortedBooks
  
  */
 
-//let sortedBooks = allBooks.sorted(by: { $0.readingAge <= $1.readingAge {
-//        return true
-//    } else {
-//        return false
-//    }
-//})
+let sortedBooks = allBooks.sorted(by: { $0.readingAge <= $1.readingAge {
+        return true
+    } else {
+        return false
+    }
+})
 
 /*
  
@@ -141,12 +141,12 @@ sortedBooks
  
  */
 
-//let sortedBooks = allBooks.sorted(by: ) { $0.readingAge <= $1.readingAge {
-// return true
-// } else {
-// return false
-// }
-// }
+let sortedBooks = allBooks.sorted(by: ) { $0.readingAge <= $1.readingAge {
+ return true
+ } else {
+ return false
+ }
+ }
 
 /*
  
