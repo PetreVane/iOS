@@ -120,7 +120,7 @@ sortedBooks
  (firstBook: Book, secondBook: Book) -> Bool , including the "in" keyword.
  
  
- Next, since you're using a piece of code that takes by default ceratin parameters, Swift has already given a name for those parameters...that mean the "firstBook" and "secondBook" are redundand.
+ Next, since you're using a piece of code that takes by default certain parameters, Swift has already given a name for those parameters...that means the "firstBook" and "secondBook" are redundand.
  
  So you can just replace the names with $0 and $1
  
@@ -150,20 +150,21 @@ sortedBooks
 
 /*
  
- This is called: trailing closure, and is basically a closure that it has been written outside of the { } for ease of readability.
+ This is called: trailing closure, and is basically a closure that it has been written outside of the paranthesis ( ) for ease of readability.
  
- 
- Now if this trailing closure is the only argument to this method call, then these paranthesis are kind of redundand as well:
+ Now if this trailing closure is the only argument to this method call, then these paranthesis are kind of redundand as well. You can just write the closure this way:
  
  allBooks.sorted{ $0.readingAge <= $1.readingAge { ... }}
  
- Now, since we are comparing 2 arguments, the entire "if / else" clock of code is redundand because the comparison itself will return true or false, if one argument is smaller than the other.
+ Now, since we are comparing 2 arguments, the entire "if / else" block of code is redundand because the comparison of the method itself will return true or false, if one argument is smaller than the other.
  
- So the entire if / else statement, can be deleted. And because the closure is down to a single line...includind the "return" keyword can be deleted, because the closure returns something, without me needing to type the keyword "return".
+ So the entire if / else statement, can be deleted. And because the closure is down to a single line... the "return" keyword can be deleted as well, because the closure returns something, without me needing to type the keyword "return".
  
  */
 
-let sortedBooks2 = allBooks.sorted { $0.readingAge <= $1.readingAge } // here's the final version of the closure
+// And here's the final version of the closure:
+let sortedBooks2 = allBooks.sorted { $0.readingAge <= $1.readingAge }
+
 
 let sortedBooks3 = allBooks.sorted { $0.pageCount <= $1.pageCount }
 let sortedBooks4 = allBooks.sorted { $0.authorLastName < $1.authorLastName }
