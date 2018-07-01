@@ -37,11 +37,15 @@ kettle.voltage = 220
 kettle.getDetails()
 
 /*
- Rather then providing explicit values for properties declared inside of a class, you can create an initializing method inside the class.
+ Rather then providing explicit values for properties declared inside of a class, you can create an
+ initializing method inside the class.
  
- In Swift, this just refers to a method called: init. You don't need the "func" keyword, before an init function. This is a special method -> an initializer, and is similar to a constructor method in other languages.
+ In Swift, this just refers to a method called: init.
+ You don't need the "func" keyword, before an init function.
+ This is a special method -> an initializer, and is similar to a constructor method in other languages.
  
- An init method with empty paranthesis will be automatically called when you create an instance of that class, using empty paranthesis.
+ An init method with empty paranthesis will be automatically called when you create an instance of that
+ class, using empty paranthesis.
  
  */
 
@@ -87,9 +91,12 @@ parameters and it returns no value. Most of the time you will not need a deiniti
  
  
  Swift uses something called ARC: Automatic Reference Counting.
- When you create instances of classes, which are allocated in memory, ARC is what keeps track whether that instance is ... or is not still in use.
- And when it detects that, a instance is no longer used, it will handle the deinitializing process and deallocating memory for us, releasing memory for some other use.
- And it's in that process where Swift will call the deinit method, if you have one. So even though you might write a deinit method, you'll never call it yourself.
+ When you create instances of classes, which are allocated in memory, ARC is what keeps track whether
+ that instance is ... or is not still in use.
+ And when it detects that, a instance is no longer used, it will handle the deinitializing process and
+ deallocating memory for us, releasing memory for some other use.
+ And it's in that process where Swift will call the deinit method, if you have one.
+ So even though you might write a deinit method, you'll never call it yourself.
  */
 
 
