@@ -40,8 +40,9 @@ class Cars {
 }
 
 /*
-One major difference between structs and classes, is that classes support inheritance. Structs do not!
-And perhaps the most important difference between structs and classes: structs are Value Types, while classes are Reference Types.
+One major difference between structs and classes, is that classes support inheritance. Structs do not.
+And perhaps the most important difference between structs and classes: structs are Value Types, while classes
+are Reference Types.
  
 */
 
