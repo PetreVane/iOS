@@ -165,7 +165,7 @@ let sortedBooks = allBooks.sorted(by: ) { $0.readingAge <= $1.readingAge {
 // And here's the final version of the closure:
 let sortedBooks2 = allBooks.sorted { $0.readingAge <= $1.readingAge }
 
-
+// You can no sort the array based on other criterias
 let sortedBooks3 = allBooks.sorted { $0.pageCount <= $1.pageCount }
 let sortedBooks4 = allBooks.sorted { $0.authorLastName < $1.authorLastName }
 
