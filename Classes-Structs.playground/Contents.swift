@@ -68,7 +68,18 @@ print(anotherMessage.internalText)
  Now change the keyword "class" to "struct" and run the code again. See that the changes performed on "anotherMessage" will
  not be passed to the initial instance of the class "message2". That's because structs are Value types and a copy of the "message2"
  is assigned to "anotherMessage" and not a pointer to the initial instance.
+
+
+ Finding out if multiple variables / constants are poiting to the same instance of a class is made with the help of identity
+ operator "==="
+
  */
+
+if message2 === anotherMessage {
+    print ("These two over here, point to the same instance" )
+} else {
+    print ("Neah, the're fine!")
+}
 
 
 
