@@ -61,7 +61,7 @@ class Televison {
         self.yearOfProduction = 0
         self.resolution = 0
         
-        // if a property is declare as an optional, that's allowed to remain uninitialized.
+        // if a property is declared as an optional, that's allowed to remain uninitialized.
     }
 }
 
@@ -73,14 +73,23 @@ firstTV.yearOfProduction = 2017
 
 
 /*
- So this default initializer, takes no parameters. But you can create an additionall initializer, as long they have different parameter signature, so you can identify the initializers apart.
+ So this default initializer, takes no parameters. But you can create an additionall initializer,
+ as long they have different parameter signature, so you can identify the initializers apart.
  
- Then, when you create a new instance, you'll get a choice of which initializer you want to use. And after that, use .syntax as before.
+ Then, when you create a new instance, you'll get a choice of which initializer you want to use.
+ And after that, use .syntax as before.
  
- A class can also be given a de-initializer. There can only be one deinitializer in a class, and like the initializer, this is a special method, which does not require the "func" keyword, it has no parameters and it returns no value. Most of the time you will not need a deinitializer. But they can be used in cases where an object needs to perform some explicit cleanup-code, like releasing a file resource before it gets deleted.
+ A class can also be given a de-initializer. There can only be one deinitializer in a class, and like
+ the initializer, this is a special method, which does not require the "func" keyword, it has no
+parameters and it returns no value. Most of the time you will not need a deinitializer. But they can be
+ used in cases where an object needs to perform some explicit cleanup-code, like releasing a file
+ resource before it gets deleted.
  
  
- Swift uses something called ARC: Automatic Reference Counting. When you create instances of classes, which are allocated in memory, ARC is what keeps track whether that instance is ... or is not still in use. And when it detects that, a instance is no longer used, it will handle the deinitializing process and deallocating memory for us, releasing memory for some other use. And it's in that process where Swift will call the deinit method, if you have one. So even though you might write a deinit method, you'll never call it yourself.
+ Swift uses something called ARC: Automatic Reference Counting.
+ When you create instances of classes, which are allocated in memory, ARC is what keeps track whether that instance is ... or is not still in use.
+ And when it detects that, a instance is no longer used, it will handle the deinitializing process and deallocating memory for us, releasing memory for some other use.
+ And it's in that process where Swift will call the deinit method, if you have one. So even though you might write a deinit method, you'll never call it yourself.
  */
 
 
