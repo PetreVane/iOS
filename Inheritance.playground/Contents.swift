@@ -71,7 +71,7 @@ toaster.voltage = 220
  override init() {         // will resolve the initializers conflict
     self.voltage = 0
     super.init()          // calling the init function in the superclass
- super.manufacturer = "Samsung"
+    super.manufacturer = "Samsung"
 
 
 
@@ -102,8 +102,8 @@ class Automobil {
         print ("\(self.model) has been manufactured by \(self.manufacturer) and it has \(self.horsePower)  HP.")
     }
     
+    }
 }
-
 
 
 
