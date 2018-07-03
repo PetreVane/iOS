@@ -78,18 +78,22 @@ toaster.voltage = 220
 //
 
 
-print(toaster.manufacturer)  // will print 'Samsung', even though I have not declared a property in the Toaster class, nor the default value
+print(toaster.manufacturer)
+print (toaster.getDetails())
 
+/* Will print 'Samsung', even though I have not declared a property in the Toaster class, nor the default value.
+ */
 
 /*
- 
  If you want to prevent a subclass from changing a value in its superclass, you can do so by declaring
  an init function in the superclass with the keyword: "final"
  
  
 */
 
-class Automobil {
+ class Automobil {
+
+// Adding "final" in front of "class", will prevent the class Dacia from inheriting properties and methods from class Automobil
     
     var manufacturer: String
     var model: String
@@ -101,11 +105,46 @@ class Automobil {
         self.horsePower = 100
     }
     
-    func carPoperties () {
-        print ("\(self.model) has been manufactured by \(self.manufacturer) and it has \(self.horsePower)  HP.")
-    }
+//    func carProperties () {
+//        print ("\(self.model) model has been manufactured by \(self.manufacturer) and it has \(self.horsePower) HP.")
+//    }
     
     }
+
+class Dacia:Automobil {
+    
+    var location: String
+    var price: Int
+    
+    override init() {
+        self.location = "default"
+        self.price = 0
+        super.init()
+        self.manufacturer = "default"
+        self.horsePower = 0
+        
+    }
+     func carProperties () {
+        print ("\(self.model) model has been manufactured by \(self.manufacturer) in \(self.location), it has \(self.horsePower) HP and the price of the model starts from \(self.price) Euro. ")
+    }
+}
+
+let mycar = Dacia()
+mycar.model = "Dacia 1310"
+mycar.carProperties()
+//
+let mySecondCar = Dacia()
+mySecondCar.model = "Dacia StepWay"
+mySecondCar.horsePower = 120
+mySecondCar.location = "Romania"
+mySecondCar.manufacturer = "Dacia-Renault"
+mySecondCar.price = 5000
+//mySecondCar.manufacturer = "Dacia-Renault"
+mySecondCar.carProperties()
+
+
+
+
 
 
 
