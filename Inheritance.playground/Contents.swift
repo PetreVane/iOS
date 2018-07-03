@@ -105,9 +105,9 @@ print (toaster.getDetails())
         self.horsePower = 100
     }
     
-//    func carProperties () {
-//        print ("\(self.model) model has been manufactured by \(self.manufacturer) and it has \(self.horsePower) HP.")
-//    }
+    func carProperties () {
+        print ("\(self.model) model has been manufactured by \(self.manufacturer) and it has \(self.horsePower) HP.")
+    }
     
     }
 
@@ -124,22 +124,17 @@ class Dacia:Automobil {
         self.horsePower = 0
         
     }
-     func carProperties () {
+    override func carProperties () {
         print ("\(self.model) model has been manufactured by \(self.manufacturer) in \(self.location), it has \(self.horsePower) HP and the price of the model starts from \(self.price) Euro. ")
     }
 }
 
-let mycar = Dacia()
-mycar.model = "Dacia 1310"
-mycar.carProperties()
-//
 let mySecondCar = Dacia()
 mySecondCar.model = "Dacia StepWay"
 mySecondCar.horsePower = 120
 mySecondCar.location = "Romania"
 mySecondCar.manufacturer = "Dacia-Renault"
 mySecondCar.price = 5000
-//mySecondCar.manufacturer = "Dacia-Renault"
 mySecondCar.carProperties()
 
 
