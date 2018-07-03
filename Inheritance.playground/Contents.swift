@@ -65,14 +65,15 @@ toaster.voltage = 220
  But you can also reach out into the superclass and add / change the default
  value of the inherited init function. In order to do that, you'll have to call the init function in the
  super class, and then you'll have access to modify the properties in the super class.
- 
+  */
+
  var voltage: Int
  override init() {         // will resolve the initializers conflict
     self.voltage = 0
     super.init()          // calling the init function in the superclass
  super.manufacturer = "Samsung"
 
- */
+
 
 print(toaster.manufacturer)  // will print 'Samsung', even though I have not declared a property in the Toaster class, nor the default value
 
