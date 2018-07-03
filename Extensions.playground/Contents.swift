@@ -48,11 +48,9 @@ print (string.removeSpaces())
  equal with an empty space.
  Then, the collection is converted into String, and then uppercased.
  
- 
  This new method is available on every single String in your program.
- 
- With extensions, you're alway adding something. You're not changing, you're not overriding ...you're just
- adding something.
+ With extensions, you're always adding something. You're not changing, you're not overriding ...you're
+ just adding something.
 */
 
 
