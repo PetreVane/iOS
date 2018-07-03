@@ -62,7 +62,7 @@ You could write a function that calculates the score based on the other properti
  class.
  So set is out of discussion.
  Here's the computed property
-  
+ 
  After declaring the computed property, you can go ahead and ask for the value of the computed property
 */
 
