@@ -36,11 +36,17 @@ class Appliances {   // this is a Superclass because it passes something to anot
 class Toaster: Appliances {   // this is a Subclass because it inherits something from another class
     // new properties
     var voltage: Int
+    override init() {         // will resolve the initializers conflict
+        self.voltage = 0
+        super.init()
+        super.manufacturer = "Samsung"
+    }
 }
 
 var toaster = Toaster()
-toaster.manufacturer = "Samsung"
+//toaster.manufacturer = "Samsung"
 toaster.model = "x20"
+toaster.voltage = 220
 
 /*
  When you add new methods to your subclass, this method will not be available in the superclass.
@@ -52,9 +58,50 @@ toaster.model = "x20"
  But if you add another initializer in the subclass, Swift will complain again, because there is a conflict between the
  inherited initializer and your new intializer.
  
- In this case, Swift will suggest that, the initializer in the subclass, should be declared with the keyword: "override"
+ In this case, Swift will suggest that, the initializer in the subclass, should be declared with the keyword: "override".
  
+ When you override an initializer, what you do is that, you add something extra to the already existing
+ inherited init function.
+ But you can also reach out into the superclass and add / change the default
+ value of the inherited init function. In order to do that, you'll have to call the init function in the
+ super class, and then you'll have access to modify the properties in the super class.
+ 
+ var voltage: Int
+ override init() {         // will resolve the initializers conflict
+    self.voltage = 0
+    super.init()          // calling the init function in the superclass
+ super.manufacturer = "Samsung"
+
+ */
+
+print(toaster.manufacturer)  // will print 'Samsung', even though I have not declared a property in the Toaster class, nor the default value
+
+
 /*
+ 
+ If you want to prevent a subclass from changing a value in its superclass, you can do so by declaring
+ an init function in the superclass with the keyword: "final"
+ 
+ 
+*/
+
+class Automobil {
+    
+    var manufacturer: String
+    var model: String
+    var horsePower: Int
+    
+    init () {
+        self.manufacturer = "default"
+        self.model = "default"
+        self.horsePower = 100
+    }
+    
+    func carPoperties () {
+        print ("\(self.model) has been manufactured by \(self.manufacturer) and it has \(self.horsePower)  HP.")
+    }
+    
+}
 
 
 
