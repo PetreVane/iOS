@@ -33,6 +33,7 @@ class Appliances {   // this is a Superclass because it passes something to anot
  
 */
 
+
 class Toaster: Appliances {   // this is a Subclass because it inherits something from another class
     // new properties
     var voltage: Int
@@ -54,9 +55,11 @@ toaster.voltage = 220
  But when you add new properties to your subclass, Swift will complain, because the new property is not initialised
  in the superclass.
  
- In this case, you can declare the new property with a default value...or, you can add your own initializer.
- But if you add another initializer in the subclass, Swift will complain again, because there is a conflict between the
- inherited initializer and your new intializer.
+ In this case, you can declare the new property with a default value...or, you can add your own
+ initializer.
+ But because we're in a "inheritance relationship", when you add another initializer in the subclass, Swift
+ will complain again, because there is a potential for misunderstanding and conflit between the inherited
+ initializer and your new intializer.
  
  In this case, Swift will suggest that, the initializer in the subclass, should be declared with the keyword: "override".
  
@@ -67,12 +70,12 @@ toaster.voltage = 220
  super class, and then you'll have access to modify the properties in the super class.
   */
 
- var voltage: Int
- override init() {         // will resolve the initializers conflict
-    self.voltage = 0
-    super.init()          // calling the init function in the superclass
-    super.manufacturer = "Samsung"
-
+// var voltage: Int
+// override init() {         // will resolve the initializers conflict
+//    self.voltage = 0
+//    super.init()          // calling the init function in the superclass
+//    super.manufacturer = "Samsung"
+//
 
 
 print(toaster.manufacturer)  // will print 'Samsung', even though I have not declared a property in the Toaster class, nor the default value
@@ -103,7 +106,8 @@ class Automobil {
     }
     
     }
-}
+
+
 
 
 
