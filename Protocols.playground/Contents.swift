@@ -73,10 +73,38 @@ p2.penalty = 80
 print ("\(p1), while \(p2).")  // Now the description of each instance is printed.
 
 
+/*
+ It is also possible to declare your own protocols. The syntax for that is very very simple.
+ Once you have declared your own protocol, every class, struct, enumeration can use that protocol.
+ */
 
+protocol Myprotocol {
+    // what methods are required?
+    func showMessage ()
+    
+    // what properties?
+    
+    var welcome: String {get} // you need to mention either this is a read-only property or read-write property
+    
+}
 
+// This is now a protocol that any class, struct or enum can volunteer to do.
+// Now adopting the protocol I have created
 
+struct Testing: Myprotocol {
+    var welcome: String {
+        return "Hello"
+    }
+    var name: String
+    
+    func showMessage() {
+        print ("\(welcome) \(name)")
+    }
+    
+}
 
+let me = Testing(name: "Peter")
+print(me.showMessage())
 
 
 
