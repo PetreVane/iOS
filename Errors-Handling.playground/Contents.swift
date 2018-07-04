@@ -38,13 +38,15 @@ func checkStatus (serverNumber: Int) throws -> String {
         print ("There are no available connections ")
         throw ServerError.noConnection
     case 2:
-        throw ServerError.serverNotFound
         print ("Server not found ")
+        throw ServerError.serverNotFound
+      
     case 3:
         print("Server 3 is up and running")
     default:
-        throw ServerError.authenticationRefused
         print("Authentication failed")
+        throw ServerError.authenticationRefused
+        
 
     }
     return "Success!"
@@ -55,12 +57,12 @@ func checkStatus (serverNumber: Int) throws -> String {
 //let result = checkStatus(serverNumber: 3)
 //print (result)
 
-// Handle it
+//Handle errors, example 1
 
 do {
-    let result = try checkStatus(serverNumber: 3)
+    let result = try checkStatus(serverNumber: 1)
     print(result)
-    
+
 } catch {
     print("The problem is: \(error)")
 }
@@ -70,14 +72,15 @@ do {
  passed-in with an automatic name of "error" --with a lower case "e", so I can then print it out.
  
  However, it is also possible to include multiple catch-blocks, if you wish to have different catch-behaviour
- for a more specific error.
+ for a more specific error. See bellow.
  
 */
+// Handle errors, example 2
 
 do {
     let result = try checkStatus(serverNumber: 2)
     print(result)
-    
+
 } catch ServerError.noConnection {
     print("There is no connection")
 } catch ServerError.serverNotFound {
@@ -88,9 +91,37 @@ do {
 
 /*
  Unlike a switch statement, the compiler will not force you to be exhaustive with the different
- errors types and create catch-blocks for every specific enum case, but there is a good practice to leave
- the generic catch-block at the end.
+ errors types and create catch-blocks for every specific enum case, but there is a good practice to
+ leave the generic catch-block at the end.
+
+ When calling a function that might return a value, but might also return an error, you can think
+ about the result, almost as if it's an optional.
 */
+
+/*
+ Handle errors, example 3
+ Here, I might not care why I am getting an error. I'm just trying to get a value.
+ If I can get a value out of the try-function statement, that's fine. Else, I am setting the value of
+ response to nil. So "response" is declared as an optional type.
+*/
+
+let response: String?
+do {
+    response = try checkStatus(serverNumber: 1) // switch cases to see the difference
+} catch {
+    response = nil
+}
+
+if response != nil {
+    print(response)
+}
+
+// the last statement can be written in a shorter form
+
+if let response2 = try? checkStatus(serverNumber: 3) {
+    print(response2)
+}
+
 
 
 
