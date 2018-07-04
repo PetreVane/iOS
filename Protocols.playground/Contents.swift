@@ -13,7 +13,7 @@ import Cocoa
  Consider the following class:
 */
 
-class Player {
+class Player: CustomStringConvertible {
     // some properties
     var name :String
     var livesRemaining: Int
@@ -34,7 +34,23 @@ class Player {
         return ((enemiesDestroyed * 100) + bonus + (livesRemaining * 100) - penalty)
     }
     
+    var description: String { // description is required to conform to the protocol
+        return "\(self.name) has a score of \(self.score) points and \(self.livesRemaining) lives"
+    }
 }
+
+/*
+ If you want to get a description of each instance of the class, you can write your own function,
+ which provides some sort of description...or you can use a protocol named CostumStringConvertible,
+ which includes a description of each instance.
+ 
+ So you set your class to adopt a protocol by adding a : right besides the class name and type the
+ proocol name. Almost immediatly, Swift will complain because, if you wish to adopt this protocol, you
+ need to conform to it.
+ And that means that, you need to provide a property called "description", of type String for
+ your class, just as this protocol requires. Other protocols might require one or several methods or
+ properties.
+ */
 
 // Creating some instances of class Player.
 
@@ -52,6 +68,7 @@ p2.bonus = 395
 p1.penalty = 100
 p2.penalty = 80
 
+print ("\(p1), while \(p2).")  // Now the description of each instance is printed.
 
 
 
