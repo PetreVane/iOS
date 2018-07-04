@@ -7,7 +7,7 @@ import Cocoa
  
 Swift does not provide a built-in error class.
 In Swift, you'll define your own error types and you can define multiple error types.
-You can define an error as struct, class or enum. An enum can be a very useful way to define an error.
+You can define an error as struct, class or enum. An enum can be a very useful way for defining an error.
  
 */
 
@@ -20,12 +20,12 @@ enum ServerError: Error {
 }
  /*
 But if you wish to tap into the built-in Error Handling Mechanism, you can adopt the Error protocol.
-Error is a built-in protocol. The error protocol is an unusual one, because when you adopt this protocol,
-you don't have to provide any methods or any properties. You don't have to add anything at all to use this it.
+The error protocol is an unusual one, because when you adopt this protocol, you don't have to provide any
+methods or any properties. You don't have to add anything at all to use it.
  
-The reason why you do this, is to tell Swift that you will use this enumeration/ new type as an Error ... this is something
-that you intend to throw. The point of adopting a protocol is that, you wish to do somehing with it..something that you couldn't do
- before. In this case, you wish to handle errors.
+The reason why you do this, is to tell Swift that you will use this enumeration/ new type as an Error ... and this is something
+that you intend to throw. The point of adopting a protocol is that, you wish to do somehing with it..
+ something that you couldn't do before. In this case, you wish to handle errors.
 
 Now that you have marked this enum as an Error, you can go ahead and use the keyword "throw", to throw it and handle it.
  */
@@ -50,10 +50,12 @@ func checkStatus (serverNumber: Int) throws -> String {
     return "Success!"
 }
 
-// Handle it
+
 
 //let result = checkStatus(serverNumber: 3)
 //print (result)
+
+// Handle it
 
 do {
     let result = try checkStatus(serverNumber: 3)
@@ -65,10 +67,10 @@ do {
 
 /*
  Whenever an error is thrown, it's being passed into this generic catch block, and it's being
- passed in with an automatic name of "error" --with a lower case "e", so I can then print it out.
+ passed-in with an automatic name of "error" --with a lower case "e", so I can then print it out.
  
- However, it is also possible to include multiple catch -blocks, if what you want to do is to have
- different catch-behaviour for a more specific error.
+ However, it is also possible to include multiple catch-blocks, if you wish to have different catch-behaviour
+ for a more specific error.
  
 */
 
@@ -86,8 +88,8 @@ do {
 
 /*
  Unlike a switch statement, the compiler will not force you to be exhaustive with the different
- errors types and create catch-blocks for every specific enum, but there is a good practice to leave
- this generic catch-block at the end
+ errors types and create catch-blocks for every specific enum case, but there is a good practice to leave
+ the generic catch-block at the end.
 */
 
 
