@@ -5,9 +5,8 @@ import Cocoa
 /*
  In Swift, a protocol is a way you  can formalize some rules about what a class, or a struct, or an enum, should do.
  Protocols are a common, everyday task in Swift programming.
- The engineers at Apple call Swift a protocol-oriented programming language. And they're not trying to suggest it's not object
- oriented, sure it is, but this about priority, that in Swift it is more useful to think about protocols than to think about objects
- and class inheritance.
+ The engineers at Apple call Swift a protocol-oriented programming language. And they're saying that in Swift
+ it is more useful to think about protocols than to think about objects and class inheritance.
  
  Basically, a protocol it's a set of rules, a code of behavior.
  Consider the following class:
@@ -50,6 +49,9 @@ class Player: CustomStringConvertible {
  And that means that, you need to provide a property called "description", of type String for
  your class, just as this protocol requires. Other protocols might require one or several methods or
  properties.
+ 
+ If you're inheriting from another class, then you'll type the name of your superclass, followed by ,
+ and the protocol name. It is possible to include several protocols, spaced by , .
  */
 
 // Creating some instances of class Player.
