@@ -68,9 +68,16 @@ greet(person: ["name": "Jane", "location": "Cupertino"])
 // Prints "Hello Jane!"
 // Prints "There is a key with value: Cupertino in this dictionary."
 
+/*
+ And finally, the defer keyword, a simple one and a useful one. You see, it's not unusual to have a method that needs to open some
+ resource, a file resource, a network resource, even a complex object.
 
+ But in that function, it's also not unusual to find ourselves needing to write multiple places to make sure that however we end up
+ exiting this function, we're always going to be able to close that resource or there's going to be problems. Defer takes care of
+ that, and it is a simple syntax, the word defer, and a code block, nothing else. And whatever you put in this block will be called
+ just before the block that you're in, most usually a function will drop out of scope.
 
-
+*/
 
 
 
