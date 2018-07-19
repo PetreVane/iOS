@@ -34,6 +34,10 @@ addElementToSet(array: myList)
 
 /*
 ======= Fibonaci Game =========
+
+ The last two numbers of the array are added together and the result is appended to array.
+ Then the process is repeated.
+
  */
 
 
@@ -54,7 +58,7 @@ func fibonacciAdding(repetitions: Int) -> [Int] {
 
 fibonacciAdding(repetitions: 10)
 
-
+// prints [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 
 
