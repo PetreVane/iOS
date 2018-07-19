@@ -7,7 +7,7 @@ var str = "Hello, playground"
 
 let age = 20
 
-// assert(age >= 0, "You cannot have a negative age")
+ assert(age >= 0, "You cannot have a negative age")
 
 if age > 10 {
     print("You can play outside")
@@ -16,4 +16,23 @@ if age > 10 {
 } else {
     assertionFailure("You cannot have a negative age!")
 }
+
+let names = ["ana", "peter", "john", "mike"]
+
+for (index, value) in names.enumerated() {
+
+    print("Element \(value) is at index \(index) ")
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
