@@ -32,6 +32,27 @@ func addElementToSet(array: [Int]) -> Set<Int> {
 addElementToSet(array: myList)
 
 
+/*
+======= Fibonaci Game =========
+ */
+
+
+func fibonacciAdding(repetitions: Int) -> [Int] {
+    
+    var listOfNumbers = [0, 1]
+    
+    for _ in 1...repetitions {
+        let lastElement = listOfNumbers.count - 1
+        let beforeLastElement = listOfNumbers.count - 2
+        let sumOfLastElements = listOfNumbers[lastElement] + listOfNumbers[beforeLastElement]
+        listOfNumbers.append(sumOfLastElements)
+    }
+    
+    return listOfNumbers
+}
+
+
+fibonacciAdding(repetitions: 10)
 
 
 
